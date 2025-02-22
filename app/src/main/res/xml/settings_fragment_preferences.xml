@@ -9,7 +9,6 @@
         android:key="@string/settings_preference_video_encoder_pref"
         android:title="@string/settings_preference_video_encoder_text"
         android:summary="@string/settings_preference_encoder_summary_text"
-        android:icon="@drawable/ads_icon"
         android:entries="@array/video_encoders"
         android:entryValues="@array/video_encoders_values" />
 
@@ -17,7 +16,6 @@
         android:key="@string/settings_preference_video_bitrate_pref"
         android:title="@string/settings_preference_video_bitrate_text"
         android:summary="@string/settings_preference_bitrate_summary_text"
-        android:icon="@drawable/ads_icon"
         android:entries="@array/video_bitrates"
         android:entryValues="@array/video_bitrates_values"/>
 
@@ -25,7 +23,6 @@
         android:key="@string/settings_preference_target_fps_pref"
         android:title="@string/settings_preference_target_fps_text"
         android:summary="@string/settings_preference_fps_summary_text"
-        android:icon="@drawable/ads_icon"
         android:entries="@array/video_fps"
         android:entryValues="@array/video_fps_values"/>
 

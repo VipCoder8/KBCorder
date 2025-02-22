@@ -108,20 +108,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         activityResultLauncher = registerForActivityResult(activityResultContract, activityResultCallback)
     }
 
-    override fun onPreferenceTreeClick(preference: Preference): Boolean {
-        for(index in videoSettingsModifier.adsSettingsList) {
-            when (preference.order) {
-                index -> {
-                    Ads.showRewardedAd(this@SettingsFragment.requireContext())
-                    preference.icon = null
-                    videoSettingsModifier.updateWatchedAds(index, true)
-                }
-                else -> return super.onPreferenceTreeClick(preference)
-            }
-        }
-        return true
-    }
-
     //Changing video settings based on user input from preferences.
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         val value: Int = sharedPreferences?.getString(key, "-1")?.toInt()!!

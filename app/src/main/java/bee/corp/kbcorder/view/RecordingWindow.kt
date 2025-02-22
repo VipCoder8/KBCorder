@@ -124,13 +124,11 @@ class RecordingWindow(v: ViewModelStoreOwner, c: Context) : BasicRecordingWindow
         }
         addRecordingCameraButtonEvents(object: RecordingCameraEvents {
             override fun onMove(event: MotionEvent) {
+                updateControllerOnRemoverCollision(event.rawX, event.rawY)
                 if(!isControllerCaptured) {
                     bindingRecordingParams.x = getCameraMoveX(event.rawX)
                     bindingRecordingParams.y = getCameraMoveY(event.rawY)
-                    updateControllerOnRemoverCollision()
                     windowManager.updateViewLayout(bindingRecording.root, bindingRecordingParams)
-                } else {
-
                 }
             }
 
@@ -168,17 +166,15 @@ class RecordingWindow(v: ViewModelStoreOwner, c: Context) : BasicRecordingWindow
         }
     }
 
-    private fun updateControllerOnRemoverCollision() {
+    private fun updateControllerOnRemoverCollision(touchX: Float, touchY: Float) {
         if(CollisionViews.isColliding(CollisionViews.getViewBounds(bindingRecording.controllerCamera),
-                ViewExpanding.expandView(bindingRemover.recordingRemover, 50, 50, 50, 50))) {
+                ViewExpanding.expandView(bindingRemover.recordingRemover, 50, 50, 50, 50)) &&
+            !((touchX >= bindingRemoverParams.x + 50 || touchX <= bindingRemoverParams.x - 50) || (touchY >= bindingRemoverParams.y + 50 || touchY <= bindingRemoverParams.y - 50))) {
             isControllerCaptured = true
-            val centerX: Int = ViewPositionRetreiver.getX(bindingRemover.root) + bindingRemover.root.width / 2
-            val centerY: Int = ViewPositionRetreiver.getY(bindingRemover.root) + bindingRemover.root.height / 2
-
-            val moveX = centerX
-            val moveY = centerY
-            bindingRecordingParams.x = moveX
-            bindingRecordingParams.y = moveY
+            bindingRecordingParams.x = ViewPositionRetreiver.getX(bindingRemover.root) + bindingRecording.controllerCamera.width/2
+            bindingRecordingParams.y = ViewPositionRetreiver.getY(bindingRemover.root) - bindingRemover.recordingRemover.height + bindingRecording.controllerCamera.height/2
+        } else {
+            isControllerCaptured = false
         }
     }
 

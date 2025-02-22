@@ -23,9 +23,6 @@ class VideoSettingsModifier(app: Application) : AndroidViewModel(app) {
     private var _dataUpdated: MutableLiveData<UpdatedVideoData> = MutableLiveData()
     val getUpdatedData: LiveData<UpdatedVideoData> get() = _dataUpdated
 
-    val adsSettingsList: Array<Int> = arrayOf(1,2,3)
-    val adsWatchedList: HashMap<Int, Boolean> = hashMapOf()
-
     init {
         //Reading and saving video directory on initialize for other parts of program
         //that uses video save path to work properly(it's being read after save).
@@ -39,28 +36,16 @@ class VideoSettingsModifier(app: Application) : AndroidViewModel(app) {
         for(data in videoSettingsReader.readData()!!) {
             when(data.name) {
                 Constants.Video.FileNames.BITRATE_SETTING_FILE_NAME -> {
-                    if(adsWatchedList.containsKey(2) && adsWatchedList[2] == true) {
-                        VideoSettings.videoBitrate = videoSettingsReader.readBitrate()
-                    } else {
-                        VideoSettings.videoBitrate = Constants.Video.VideoSettings.DEFAULT_VIDEO_BITRATE
-                    }
+                    VideoSettings.videoBitrate = videoSettingsReader.readBitrate()
                 }
                 Constants.Video.FileNames.FPS_SETTING_FILE_NAME -> {
-                    if(adsWatchedList.containsKey(3) && adsWatchedList[3] == true) {
-                        VideoSettings.videoFps = videoSettingsReader.readFps()
-                    } else {
-                        VideoSettings.videoFps = Constants.Video.VideoSettings.DEFAULT_VIDEO_FPS
-                    }
+                    VideoSettings.videoFps = videoSettingsReader.readFps()
                 }
                 Constants.Video.FileNames.OUTPUT_FORMAT_SETTING_FILE_NAME -> {
                     VideoSettings.videoOutput = videoSettingsReader.readOutputFormat()
                 }
                 Constants.Video.FileNames.ENCODER_SETTING_FILE_NAME -> {
-                    if(adsWatchedList.containsKey(1) && adsWatchedList[1] == true) {
-                        VideoSettings.videoEncoder = videoSettingsReader.readEncoder()
-                    } else {
-                        VideoSettings.videoEncoder = Constants.Video.VideoSettings.DEFAULT_VIDEO_ENCODER
-                    }
+                    VideoSettings.videoEncoder = videoSettingsReader.readEncoder()
                 }
                 Constants.Video.FileNames.DIRECTORY_SETTING_FILE_NAME -> {
                     VideoSettings.videoSaveDirectory = videoSettingsReader.readDirectory()
@@ -68,10 +53,6 @@ class VideoSettingsModifier(app: Application) : AndroidViewModel(app) {
             }
         }
         _dataRead.postValue(true)
-    }
-
-    fun updateWatchedAds(key: Int, value: Boolean) {
-        adsWatchedList.put(key, value)
     }
 
     fun setVideoFps(fps: Int) {

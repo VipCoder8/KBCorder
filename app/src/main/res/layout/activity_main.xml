@@ -20,14 +20,6 @@
         android:layout_height="wrap_content"
         app:backgroundTint="@null"
         app:menu="@menu/activity_main_bottom_navigation_menu"
-        app:layout_constraintBottom_toTopOf="@id/banner_ad"/>
-
-    <com.startapp.sdk.ads.banner.Banner
-        android:id="@+id/banner_ad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     
 </androidx.constraintlayout.widget.ConstraintLayout>

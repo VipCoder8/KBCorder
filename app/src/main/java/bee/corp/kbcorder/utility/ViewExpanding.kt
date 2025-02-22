@@ -7,8 +7,8 @@ class ViewExpanding {
     companion object {
         fun expandView(view: View, top: Int, left: Int, bottom: Int, right: Int) : Rect {
             val rect: Rect = getViewBounds(view)
-            rect.top += top
-            rect.left += left
+            rect.top -= top
+            rect.left -= left
             rect.bottom += bottom
             rect.right += right
             return rect
