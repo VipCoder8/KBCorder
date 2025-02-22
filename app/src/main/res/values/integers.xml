@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <integer name="recording_window_widgets_move_in_to_x">0</integer>
+    <integer name="recording_window_widgets_move_out_to_x">20</integer>
+
+    <integer name="recording_window_pause_widget_move_in_to_y">0</integer>
+    <integer name="recording_window_pause_widget_move_out_to_y">30</integer>
+
+    <integer name="recording_window_start_stop_widget_move_in_to_y">0</integer>
+    <integer name="recording_window_start_stop_widget_move_out_to_y">-30</integer>
+
+    <integer name="recording_window_widget_move_duration">100</integer>
+</resources>

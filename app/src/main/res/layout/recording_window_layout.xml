@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/recording_window_layout_width"
+    android:layout_height="@dimen/recording_window_layout_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/pause_recording_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recording_window_controller_pause_recording"
+        android:background="@null"
+        android:layout_marginTop="@dimen/recording_window_layout_pause_widget_vertical_margin"
+        android:layout_marginStart="@dimen/recording_window_layout_widgets_start_margin"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/controller_camera"
+        app:layout_constraintBottom_toTopOf="@id/controller_camera"/>
+
+    <ImageButton
+        android:id="@+id/controller_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recording_window_controller_camera"
+        android:background="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/start_stop_recording_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recording_window_controller_start_recording"
+        android:background="@null"
+        android:layout_marginTop="@dimen/recording_window_layout_start_stop_widget_vertical_margin"
+        android:layout_marginStart="@dimen/recording_window_layout_widgets_start_margin"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/controller_camera"
+        app:layout_constraintTop_toBottomOf="@id/controller_camera"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

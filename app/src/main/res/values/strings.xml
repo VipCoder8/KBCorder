@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">KBCorder</string>
+    <string name="activity_main_bottom_navigation_menu_home_button_text">Home</string>
+    <string name="activity_main_bottom_navigation_menu_videos_button_text">Videos</string>
+    <string name="activity_main_bottom_navigation_menu_settings_button_text">Settings</string>
+
+    <string name="fragment_videos_search_view_query_hint">Search Videos</string>
+
+    <string name="settings_preference_video_encoder_pref">video_encoder_pref</string>
+    <string name="settings_preference_video_bitrate_pref">video_bitrate_pref</string>
+    <string name="settings_preference_target_fps_pref">video_fps_pref</string>
+    <string name="settings_preference_output_format_pref">video_output_format_pref</string>
+
+    <string name="settings_preference_encoder_summary_text">Encoder used for Video(H264 or H263)</string>
+    <string name="settings_preference_fps_summary_text">FPS used for Video</string>
+    <string name="settings_preference_bitrate_summary_text">Bitrate used for Video</string>
+    <string name="settings_preference_output_format_summary_text">Format for output video file</string>
+
+    <string name="settings_preference_output_directory_text">Output Directory</string>
+    <string name="settings_preference_video_bitrate_text">Video Bitrate</string>
+    <string name="settings_preference_target_fps_text">Video FPS</string>
+    <string name="settings_preference_output_format_text">Video Output Format</string>
+    <string name="settings_preference_video_encoder_text">Video Encoder</string>
+
+    <string name="fragment_home_start_recording_text_view_text">Start Recording</string>
+
+    <string name="edit_dialog_layout_new_title_hint">New Title</string>
+    <string name="settings_preference_output_directory_pref">output_directory_pref</string>
+
+    <string-array name="video_fps">
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+    </string-array>
+
+    <string-array name="output_formats">
+        <item>MPEG4(.mp4)</item>
+        <item>WEBM(.webm)</item>
+    </string-array>
+
+    <string-array name="video_encoders">
+        <item>H263</item>
+        <item>H264</item>
+    </string-array>
+
+    <string-array name="video_bitrates">
+        <item>500kpbs</item>
+        <item>1mpbs</item>
+        <item>5mpbs</item>
+        <item>6mpbs</item>
+        <item>7mpbs</item>
+        <item>8mpbs</item>
+        <item>9mpbs</item>
+        <item>10mpbs</item>
+        <item>20mpbs</item>
+        <item>30mpbs</item>
+        <item>40mpbs</item>
+        <item>50mpbs</item>
+        <item>60mpbs</item>
+        <item>70mpbs</item>
+        <item>80mpbs</item>
+        <item>90mpbs</item>
+        <item>100mpbs</item>
+    </string-array>
+
+    <string-array name="video_fps_values">
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+    </string-array>
+
+    <string-array name="output_formats_values">
+        <item>2</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="video_encoders_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="video_bitrates_values">
+        <item>50000</item>
+        <item>1000000</item>
+        <item>5000000</item>
+        <item>6000000</item>
+        <item>7000000</item>
+        <item>8000000</item>
+        <item>9000000</item>
+        <item>10000000</item>
+        <item>20000000</item>
+        <item>30000000</item>
+        <item>40000000</item>
+        <item>50000000</item>
+        <item>60000000</item>
+        <item>70000000</item>
+        <item>80000000</item>
+        <item>90000000</item>
+        <item>100000000</item>
+    </string-array>
+</resources>

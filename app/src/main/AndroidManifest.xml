@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.Ad_ID"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
+
+    <application
+        android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:testOnly="false"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KBCorder">
+        <meta-data
+            android:name="com.startapp.sdk.APPLICATION_ID"
+            android:value="201294017" />
+        <receiver android:name="bee.corp.kbcorder.utility.services.AppCloseForegroundService$AppCloseFromNotification"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="CLOSE_APP_NOTIFICATION_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".view.activities.VideoPlayerActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".view.activities.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".utility.services.AppCloseForegroundService"
+            android:foregroundServiceType="mediaProjection" />
+    </application>
+
+</manifest>
