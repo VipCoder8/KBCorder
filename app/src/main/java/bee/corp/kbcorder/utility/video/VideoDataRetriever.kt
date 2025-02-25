@@ -54,5 +54,14 @@ class VideoDataRetriever {
                 return -1
             }
         }
+        fun getVideoRotation(path: String) : Int {
+            try {
+                mediaDataRetriever.setDataSource(path)
+                return mediaDataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION)!!.toInt()
+            } catch(e: Exception) {
+                e.printStackTrace()
+                return -1
+            }
+        }
     }
 }

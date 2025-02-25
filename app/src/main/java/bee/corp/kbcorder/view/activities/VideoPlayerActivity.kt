@@ -19,6 +19,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var exoPlayerBuilder: ExoPlayer.Builder
     private lateinit var exoPlayer: ExoPlayer
 
+    private lateinit var videoPath: String
     private var isTitleVisible: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,10 +27,13 @@ class VideoPlayerActivity : AppCompatActivity() {
         initViews(LayoutInflater.from(this))
         setContentView(binding.root)
         initListeners()
-        initVideoPlayer(intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_PATH_EXTRA_NAME)!!)
-        adjustOrientation(
-            VideoDataRetriever.getVideoHeight(intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_PATH_EXTRA_NAME)!!),
-            VideoDataRetriever.getVideoWidth(intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_PATH_EXTRA_NAME)!!))
+        extractStringExtras()
+        initVideoPlayer(videoPath)
+        adjustOrientation(VideoDataRetriever.getVideoHeight(videoPath), VideoDataRetriever.getVideoWidth(videoPath))
+    }
+
+    private fun extractStringExtras() {
+        videoPath = intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_PATH_EXTRA_NAME)!!
     }
 
     private fun initViews(inflater: LayoutInflater) {
@@ -59,9 +63,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
 
     private fun updateTitleText() {
-        binding.videoTitleText.text =
-            intent.getStringExtra(
-                Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_TITLE_EXTRA_NAME)
+        binding.videoTitleText.text = intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_TITLE_EXTRA_NAME)!!
     }
 
     private fun updateTitleVisibility() {
