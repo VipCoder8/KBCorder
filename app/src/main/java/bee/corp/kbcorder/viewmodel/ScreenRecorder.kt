@@ -25,6 +25,9 @@ class ScreenRecorder(app: Application) : AndroidViewModel(app) {
     private val _startActivityForResult: MutableLiveData<Intent> = MutableLiveData()
     val shouldStartActivityForResult: LiveData<Intent> get() = _startActivityForResult
 
+    private val _recordingRemoved: MutableLiveData<Boolean> = MutableLiveData()
+    val isRecordingRemoved: LiveData<Boolean> get() = _recordingRemoved
+
     fun initializeVideoRecorderProjection(it: ActivityResult) {
         //Preparing media projection if user agreed on screen capture.
         if(it.resultCode == Activity.RESULT_OK) {
@@ -47,6 +50,10 @@ class ScreenRecorder(app: Application) : AndroidViewModel(app) {
             Constants.Core.getScreenWidth(getApplication()),
             Constants.Core.getScreenHeight(getApplication()))
         _startActivityForResult.postValue(mediaProjectionManager.createScreenCaptureIntent())
+    }
+
+    fun removeRecording() {
+        _recordingRemoved.postValue(true)
     }
 
     fun startRecording() {

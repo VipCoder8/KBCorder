@@ -9,6 +9,10 @@ class CollisionViews {
             return getViewBounds(view1).intersect(getViewBounds(view2))
         }
 
+        fun isColliding(view1: Rect, x: Int, y: Int) : Boolean {
+            return view1.contains(x, y)
+        }
+
         fun isColliding(view1: Rect, view2: Rect) : Boolean {
             return view1.intersect(view2)
         }

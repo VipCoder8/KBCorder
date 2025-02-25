@@ -59,6 +59,9 @@ class HomeFragment : Fragment() {
                 wasRecordingRequested = true
             }
         }
+        screenRecorderViewModel.isRecordingRemoved.observe(viewLifecycleOwner) {
+            wasRecordingRequested = false
+        }
     }
 
     private fun initListeners() {
