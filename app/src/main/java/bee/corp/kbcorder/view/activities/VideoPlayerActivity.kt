@@ -3,7 +3,6 @@ package bee.corp.kbcorder.view.activities
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.media3.common.MediaItem
@@ -20,7 +19,6 @@ class VideoPlayerActivity : AppCompatActivity() {
     private lateinit var exoPlayer: ExoPlayer
 
     private lateinit var videoPath: String
-    private var isTitleVisible: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +36,6 @@ class VideoPlayerActivity : AppCompatActivity() {
 
     private fun initViews(inflater: LayoutInflater) {
         binding = ActivityVideoPlayerBinding.inflate(inflater)
-        updateTitleView()
     }
 
     private fun initVideoPlayer(path: String) {
@@ -51,27 +48,7 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        binding.videoPlayerView.setOnClickListener {
-            isTitleVisible = !isTitleVisible
-            updateTitleVisibility()
-        }
-    }
 
-    private fun updateTitleView() {
-        updateTitleText()
-        updateTitleVisibility()
-    }
-
-    private fun updateTitleText() {
-        binding.videoTitleText.text = intent.getStringExtra(Constants.Intent.ExtrasNames.VIDEO_PLAYER_ACTIVITY_VIDEO_TAB_DATA_TITLE_EXTRA_NAME)!!
-    }
-
-    private fun updateTitleVisibility() {
-        if(isTitleVisible) {
-            binding.videoTitleText.visibility = View.VISIBLE
-        } else {
-            binding.videoTitleText.visibility = View.INVISIBLE
-        }
     }
 
     private fun adjustOrientation(height: Int, width: Int) {
