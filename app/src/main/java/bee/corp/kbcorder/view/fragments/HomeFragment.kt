@@ -1,5 +1,6 @@
 package bee.corp.kbcorder.view.fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,8 +44,12 @@ class HomeFragment : Fragment() {
         //Registering result activity launcher that will request for screen capture intent from user and pass result to ScreenRecorder class.
         recordingRequestActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) {
-            screenRecorderViewModel.initializeVideoRecorderProjection(it)
-            recordingWindowViewModel.open(screenRecorderViewModel)
+            if(it.resultCode != Activity.RESULT_CANCELED) {
+                screenRecorderViewModel.initializeVideoRecorderProjection(it)
+                recordingWindowViewModel.open(screenRecorderViewModel)
+            } else {
+                wasRecordingRequested = false
+            }
         }
     }
 
