@@ -34,6 +34,13 @@
         android:entryValues="@array/app_theme_values"/>
 
     <ListPreference
+        android:key="@string/settings_preference_app_lang"
+        android:title="@string/settings_preference_app_lang_text"
+        android:summary="@string/settings_preference_lang_summary_text"
+        android:entryValues="@array/app_languages_values"
+        android:entries="@array/app_languages"/>
+
+    <ListPreference
         android:key="@string/settings_preference_output_format_pref"
         android:title="@string/settings_preference_output_format_text"
         android:summary="@string/settings_preference_output_format_summary_text"

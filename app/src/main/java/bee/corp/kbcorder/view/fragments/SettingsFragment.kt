@@ -19,6 +19,7 @@ import bee.corp.kbcorder.R
 import bee.corp.kbcorder.utility.ActivityNavigationManager
 import bee.corp.kbcorder.utility.Ads
 import bee.corp.kbcorder.utility.Constants
+import bee.corp.kbcorder.utility.LanguageChanger
 import bee.corp.kbcorder.utility.video.VideoSettings
 import bee.corp.kbcorder.view.ThemeChanger
 import bee.corp.kbcorder.viewmodel.VideoSettingsModifier
@@ -130,6 +131,13 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                     ThemeChanger.setDarkTheme()
                 } else if(value == 1) {
                     ThemeChanger.setLightTheme()
+                }
+            }
+            "app_language_pref" -> {
+                if(value == 0) {
+                    LanguageChanger.setLocale("us", requireContext(), requireActivity())
+                } else if(value == 1) {
+                    LanguageChanger.setLocale("ru", requireContext(), requireActivity())
                 }
             }
         }
