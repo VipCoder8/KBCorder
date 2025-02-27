@@ -20,6 +20,7 @@ import bee.corp.kbcorder.utility.ActivityNavigationManager
 import bee.corp.kbcorder.utility.Ads
 import bee.corp.kbcorder.utility.Constants
 import bee.corp.kbcorder.utility.video.VideoSettings
+import bee.corp.kbcorder.view.ThemeChanger
 import bee.corp.kbcorder.viewmodel.VideoSettingsModifier
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -123,6 +124,13 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             }
             "video_output_format_pref" -> {
                 videoSettingsModifier.setVideoOutputFormat(value)
+            }
+            "app_theme_pref" -> {
+                if(value == 0) {
+                    ThemeChanger.setDarkTheme()
+                } else if(value == 1) {
+                    ThemeChanger.setLightTheme()
+                }
             }
         }
     }
