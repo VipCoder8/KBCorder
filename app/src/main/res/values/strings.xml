@@ -9,16 +9,19 @@
     <string name="settings_preference_video_encoder_pref" translatable="false">video_encoder_pref</string>
     <string name="settings_preference_video_bitrate_pref" translatable="false">video_bitrate_pref</string>
     <string name="settings_preference_target_fps_pref" translatable="false">video_fps_pref</string>
+    <string name="settings_preference_app_theme_pref" translatable="false">app_theme_pref</string>
     <string name="settings_preference_output_format_pref" translatable="false">video_output_format_pref</string>
 
     <string name="settings_preference_encoder_summary_text">Encoder used for Video(H264 or H263)</string>
     <string name="settings_preference_fps_summary_text">FPS used for Video</string>
+    <string name="settings_preference_app_theme_summary_text">Dark/White App Color Theme</string>
     <string name="settings_preference_bitrate_summary_text">Bitrate used for Video</string>
     <string name="settings_preference_output_format_summary_text">Format for output video file</string>
 
     <string name="settings_preference_output_directory_text">Output Directory</string>
     <string name="settings_preference_video_bitrate_text">Video Bitrate</string>
     <string name="settings_preference_target_fps_text">Video FPS</string>
+    <string name="settings_preference_app_theme_text">App Theme</string>
     <string name="settings_preference_output_format_text">Video Output Format</string>
     <string name="settings_preference_video_encoder_text">Video Encoder</string>
 
@@ -98,5 +101,15 @@
         <item>90000000</item>
         <item>100000000</item>
     </string-array>
-    <string name="activity_main_bottom_navigation_menu_home_button_text">Home</string>
+
+    <string-array name="app_themes">
+        <item>Dark</item>
+        <item>White</item>
+    </string-array>
+
+    <string-array name="app_theme_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 </resources>

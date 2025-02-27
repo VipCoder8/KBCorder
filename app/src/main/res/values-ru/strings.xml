@@ -6,11 +6,13 @@
     <string name="fragment_videos_search_view_query_hint">Искать Видео</string>
     <string name="settings_preference_encoder_summary_text">Кодировщик для видео</string>
     <string name="settings_preference_fps_summary_text">ФПС для видео</string>
+    <string name="settings_preference_app_theme_summary_text">Темная/Светлая тема приложения</string>
     <string name="settings_preference_bitrate_summary_text">Битрейт для видео</string>
     <string name="settings_preference_output_format_summary_text">Расширение выходного файла</string>
     <string name="settings_preference_output_directory_text">Папка сохранения видео</string>
     <string name="settings_preference_video_bitrate_text">Видео битрейт</string>
     <string name="settings_preference_target_fps_text">ФПС на видео</string>
+    <string name="settings_preference_app_theme_text">Тема приложения</string>
     <string name="settings_preference_output_format_text">Формат файла</string>
     <string name="settings_preference_video_encoder_text">Кодировщик видео</string>
     <string name="fragment_home_start_recording_text_view_text">Начать запись</string>
