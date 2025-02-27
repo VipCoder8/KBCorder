@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/video_tab_layout_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/default_widgets_background"
+    style="@style/DefaultWidgetsStyle"
     android:elevation="@dimen/default_widgets_elevation">
 
     <View

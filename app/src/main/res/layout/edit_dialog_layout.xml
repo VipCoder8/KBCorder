@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    style="@style/DefaultLayoutBackground"
     android:layout_height="match_parent">
 
     <EditText
@@ -11,6 +12,6 @@
         android:hint="@string/edit_dialog_layout_new_title_hint"
         android:fontFamily="@font/nunito_regular"
         android:textSize="@dimen/edit_dialog_layout_new_title_text_size"
-        android:background="@drawable/default_widgets_background" />
+        style="@style/DefaultWidgetsStyle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
