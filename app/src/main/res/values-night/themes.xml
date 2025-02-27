@@ -4,4 +4,11 @@
         <!-- Customize your dark theme here. -->
          <item name="colorPrimary">@color/primary_color</item>
     </style>
+    <style name="DefaultWidgetsStyle">
+        <item name="android:background">@drawable/dark_widgets_background</item>
+        <item name="android:elevation">@dimen/default_widgets_elevation</item>
+    </style>
+    <style name="DefaultLayoutBackground">
+        <item name="android:background">@color/default_widgets_dark_color</item>
+    </style>
 </resources>
