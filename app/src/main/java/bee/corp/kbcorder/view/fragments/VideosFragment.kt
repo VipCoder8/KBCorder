@@ -31,6 +31,7 @@ class VideosFragment : Fragment() {
     private lateinit var dialogs: VideoFragmentsDialogs
     private lateinit var onDeleteDialogPositiveButtonClick: VideoFragmentsDialogs.OnDeleteDialogPositiveButtonClick
     private lateinit var onEditDialogPositiveButtonClick: VideoFragmentsDialogs.OnEditDialogPositiveButtonClick
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

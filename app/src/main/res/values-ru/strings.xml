@@ -10,11 +10,31 @@
     <string name="settings_preference_bitrate_summary_text">Битрейт для видео</string>
     <string name="settings_preference_output_format_summary_text">Расширение выходного файла</string>
     <string name="settings_preference_output_directory_text">Папка сохранения видео</string>
-    <string name="settings_preference_video_bitrate_text">Видео битрейт</string>
-    <string name="settings_preference_target_fps_text">ФПС на видео</string>
+    <string name="settings_preference_video_bitrate_text">Битрейт видео</string>
+    <string name="settings_preference_target_fps_text">FPS видео</string>
     <string name="settings_preference_app_theme_text">Тема приложения</string>
     <string name="settings_preference_output_format_text">Формат файла</string>
     <string name="settings_preference_video_encoder_text">Кодировщик видео</string>
     <string name="fragment_home_start_recording_text_view_text">Начать запись</string>
     <string name="edit_dialog_layout_new_title_hint">Новый заголовок</string>
+    <string name="settings_preference_app_lang_text">Язык приложения</string>
+    <string name="settings_preference_lang_summary_text">Язык приложения</string>
+    <string name="settings_preference_theme_chooser_dark_text">Темная</string>
+    <string name="settings_preference_theme_chooser_light_text">Светлая</string>
+    <string name="settings_preference_output_current_directory_text">Путь файла: </string>
+
+    <string name="video_edit_dialog_title_text">Редактирование Видео</string>
+    <string name="video_edit_dialog_negative_button_text">Отмена</string>
+    <string name="video_edit_dialog_positive_button_text">Редактировать</string>
+
+    <string name="video_delete_dialog_title_text">Удаление Видео</string>
+    <string name="video_delete_dialog_message_text">Вы уверены что хотите удалить это видео?</string>
+    <string name="video_delete_dialog_positive_button_text">Удалить</string>
+    <string name="video_delete_dialog_negative_button_text">Отмена</string>
+
+    <string name="video_info_dialog_title_text">Информация о видео</string>
+    <string name="video_info_dialog_message_name_text">Название видео: </string>
+    <string name="video_info_dialog_message_size_text">Размер видео: </string>
+    <string name="video_info_dialog_message_duration_text">Продолжительность видео: </string>
+    <string name="video_info_dialog_positive_button_text">Ок</string>
 </resources>

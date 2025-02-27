@@ -54,20 +54,6 @@ class Constants {
         }
         object DefaultValues {
             const val DEFAULT_VIDEO_ITEM_DECORATION_PADDING = 18
-            const val DEFAULT_VIDEO_EDIT_DIALOG_TITLE_TEXT = "Editing Video"
-            const val DEFAULT_VIDEO_EDIT_DIALOG_NEGATIVE_BUTTON_TEXT = "Cancel"
-            const val DEFAULT_VIDEO_EDIT_DIALOG_POSITIVE_BUTTON_TEXT = "Edit"
-
-            const val DEFAULT_VIDEO_DELETE_DIALOG_TITLE_TEXT = "Deleting Video"
-            const val DEFAULT_VIDEO_DELETE_DIALOG_MESSAGE_TEXT = "Are you sure you want to delete this video?"
-            const val DEFAULT_VIDEO_DELETE_DIALOG_NEGATIVE_BUTTON_TEXT = "Cancel"
-            const val DEFAULT_VIDEO_DELETE_DIALOG_POSITIVE_BUTTON_TEXT = "Delete"
-
-            const val DEFAULT_VIDEO_INFO_DIALOG_TITLE_TEXT = "Video Information"
-            const val DEFAULT_VIDEO_INFO_DIALOG_MESSAGE_NAME_TEXT = "Video Name: "
-            const val DEFAULT_VIDEO_INFO_DIALOG_MESSAGE_SIZE_TEXT = "Video Size: "
-            const val DEFAULT_VIDEO_INFO_DIALOG_MESSAGE_DURATION_TEXT = "Video Duration: "
-            const val DEFAULT_VIDEO_INFO_DIALOG_POSITIVE_BUTTON_TEXT = "Ok"
         }
     }
 

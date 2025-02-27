@@ -61,7 +61,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private fun observeViewModels() {
         //Reads video settings data from settings files and applies them to preferences.
         videoSettingsModifier.isDataReadAndApplied.observe(this) {
-            preferenceScreen.getPreference(0).summary = "Current Directory: " +
+            preferenceScreen.getPreference(0).summary = requireContext().getString(R.string.settings_preference_output_current_directory_text) + " " +
                     VideoSettings.videoSaveDirectory
             preferenceScreen.getPreference(1).setDefaultValue(VideoSettings.videoEncoder)
             preferenceScreen.getPreference(2).setDefaultValue(VideoSettings.videoBitrate)

@@ -12,9 +12,10 @@
     <string name="settings_preference_app_theme_pref" translatable="false">app_theme_pref</string>
     <string name="settings_preference_output_format_pref" translatable="false">video_output_format_pref</string>
 
+    <string name="settings_preference_output_current_directory_text">Current Directory</string>
     <string name="settings_preference_encoder_summary_text">Encoder used for Video(H264 or H263)</string>
     <string name="settings_preference_fps_summary_text">FPS used for Video</string>
-    <string name="settings_preference_app_theme_summary_text">Dark/White App Color Theme</string>
+    <string name="settings_preference_app_theme_summary_text">Dark/Light App Color Theme</string>
     <string name="settings_preference_bitrate_summary_text">Bitrate used for Video</string>
     <string name="settings_preference_output_format_summary_text">Format for output video file</string>
 
@@ -29,9 +30,27 @@
 
     <string name="edit_dialog_layout_new_title_hint">New Title</string>
     <string name="settings_preference_output_directory_pref" translatable="false">output_directory_pref</string>
-    <string name="settings_preference_app_lang">app_language_pref</string>
+    <string name="settings_preference_app_lang" translatable="false">app_language_pref</string>
     <string name="settings_preference_app_lang_text">App Language</string>
     <string name="settings_preference_lang_summary_text">Language for app</string>
+
+    <string name="settings_preference_theme_chooser_dark_text">Dark</string>
+    <string name="settings_preference_theme_chooser_light_text">Light</string>
+
+    <string name="video_edit_dialog_title_text">Editing Video</string>
+    <string name="video_edit_dialog_negative_button_text">Cancel</string>
+    <string name="video_edit_dialog_positive_button_text">Edit</string>
+
+    <string name="video_delete_dialog_title_text">Deleting Video</string>
+    <string name="video_delete_dialog_message_text">Are you sure you want to delete this video?</string>
+    <string name="video_delete_dialog_positive_button_text">Delete</string>
+    <string name="video_delete_dialog_negative_button_text">Cancel</string>
+
+    <string name="video_info_dialog_title_text">Video Information</string>
+    <string name="video_info_dialog_message_name_text">Video Name: </string>
+    <string name="video_info_dialog_message_size_text">Video Size: </string>
+    <string name="video_info_dialog_message_duration_text">Video Duration: </string>
+    <string name="video_info_dialog_positive_button_text">Ok</string>
 
     <string-array name="video_fps">
         <item>30</item>
@@ -50,23 +69,23 @@
     </string-array>
 
     <string-array name="video_bitrates">
-        <item>500kpbs</item>
-        <item>1mpbs</item>
-        <item>5mpbs</item>
-        <item>6mpbs</item>
-        <item>7mpbs</item>
-        <item>8mpbs</item>
-        <item>9mpbs</item>
-        <item>10mpbs</item>
-        <item>20mpbs</item>
-        <item>30mpbs</item>
-        <item>40mpbs</item>
-        <item>50mpbs</item>
-        <item>60mpbs</item>
-        <item>70mpbs</item>
-        <item>80mpbs</item>
-        <item>90mpbs</item>
-        <item>100mpbs</item>
+        <item>500kbps</item>
+        <item>1mbps</item>
+        <item>5mbps</item>
+        <item>6mbps</item>
+        <item>7mbps</item>
+        <item>8mbps</item>
+        <item>9mbps</item>
+        <item>10mbps</item>
+        <item>20mbps</item>
+        <item>30mbps</item>
+        <item>40mbps</item>
+        <item>50mbps</item>
+        <item>60mbps</item>
+        <item>70mbps</item>
+        <item>80mbps</item>
+        <item>90mbps</item>
+        <item>100mbps</item>
     </string-array>
 
     <string-array name="video_fps_values">
@@ -106,8 +125,8 @@
     </string-array>
 
     <string-array name="app_themes">
-        <item>Dark</item>
-        <item>White</item>
+        <item>@string/settings_preference_theme_chooser_dark_text</item>
+        <item>@string/settings_preference_theme_chooser_light_text</item>
     </string-array>
 
     <string-array name="app_theme_values">

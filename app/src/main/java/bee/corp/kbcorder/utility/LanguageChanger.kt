@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.util.DisplayMetrics
-import androidx.core.content.ContextCompat.startActivity
 import bee.corp.kbcorder.view.activities.MainActivity
 import java.util.Locale
 
