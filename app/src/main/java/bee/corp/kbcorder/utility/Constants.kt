@@ -38,10 +38,10 @@ class Constants {
         }
         object DataTypes {
             const val VIDEO_OUTPUT_DIRECTORY_DATA_TYPE = 0
-            const val VIDEO_OUTPUT_FORMAT_DATA_TYPE = 1
-            const val VIDEO_ENCODER_DATA_TYPE = 2
-            const val VIDEO_BITRATE_DATA_TYPE = 3
-            const val VIDEO_FPS_DATA_TYPE = 4
+            const val VIDEO_ENCODER_DATA_TYPE = 1
+            const val VIDEO_BITRATE_DATA_TYPE = 2
+            const val VIDEO_FPS_DATA_TYPE = 3
+            const val VIDEO_OUTPUT_FORMAT_DATA_TYPE = 4
         }
     }
 
@@ -91,6 +91,17 @@ class Constants {
         object ActionTitles {
             const val APP_CLOSE_FROM_NOTIFICATION_ACTION_TITLE = "Exit"
             const val APP_CLOSE_FROM_NOTIFICATION_CONTENT_TITLE = "Running..."
+        }
+    }
+
+    object Settings {
+        object Files {
+            const val APP_LANGUAGE_FILE_NAME = "app_language"
+            const val APP_THEME_FILE_NAME = "app_theme"
+        }
+        object Types {
+            const val APP_LANGUAGE_DATA_TYPE = 0
+            const val APP_THEME_DATA_TYPE = 1
         }
     }
 
