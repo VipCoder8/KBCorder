@@ -21,7 +21,7 @@ class SettingsSaver(application: Application) : AndroidViewModel(application) {
     val getReadData: LiveData<SettingsData> get() = _readData
 
     init {
-        readData(settingsFolder.absolutePath + "/")
+        //readData(settingsFolder.absolutePath + "/")
     }
 
     private fun readData(file: String) {

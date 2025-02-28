@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import bee.corp.kbcorder.model.VideoTabData
 import bee.corp.kbcorder.utility.Constants
+import bee.corp.kbcorder.utility.video.VideoSearch
 import bee.corp.kbcorder.utility.video.VideoSettings
 import bee.corp.kbcorder.utility.video.filemanagement.VideoFilesManipulation
 
@@ -22,6 +23,9 @@ class VideosManagement(app: Application) : AndroidViewModel(app) {
     private val _videoDeleted: MutableLiveData<Int> = MutableLiveData()
     val getDeletedVideo: LiveData<Int> get() = _videoDeleted
 
+    private val _foundVideos: MutableLiveData<ArrayList<VideoTabData>> = MutableLiveData()
+    val getFoundVideos: LiveData<ArrayList<VideoTabData>> get() = _foundVideos
+
     fun setLoadedVideos(arr: ArrayList<VideoTabData>) {
         loadedVideos = arr
     }
@@ -29,6 +33,10 @@ class VideosManagement(app: Application) : AndroidViewModel(app) {
     fun setCurrentVideoTab(position: Int, data: VideoTabData) {
         currentVideoTab = data
         currentVideoTabPosition = position
+    }
+
+    fun findVideos(searchTarget: String) {
+        _foundVideos.value = VideoSearch.searchVideo(loadedVideos, searchTarget)
     }
 
     fun editVideoTitle(newTitle: String, data: VideoTabData, position: Int) {

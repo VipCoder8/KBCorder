@@ -22,6 +22,7 @@ import bee.corp.kbcorder.utility.Constants
 import bee.corp.kbcorder.utility.LanguageChanger
 import bee.corp.kbcorder.utility.video.VideoSettings
 import bee.corp.kbcorder.view.ThemeChanger
+import bee.corp.kbcorder.viewmodel.SettingsSaver
 import bee.corp.kbcorder.viewmodel.VideoSettingsModifier
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -33,6 +34,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private lateinit var outputDirectoryPref: Preference
 
     private lateinit var videoSettingsModifier: VideoSettingsModifier
+    private lateinit var settingsSaver: SettingsSaver
 
     private lateinit var preferenceEditor: SharedPreferences.Editor
 
@@ -56,6 +58,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
     private fun initViewModels() {
         videoSettingsModifier = ViewModelProvider(requireActivity())[VideoSettingsModifier::class.java]
+        settingsSaver = ViewModelProvider(requireActivity())[SettingsSaver::class.java]
     }
 
     private fun observeViewModels() {
@@ -72,21 +75,16 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         videoSettingsModifier.getUpdatedData.observe(this) {
             when(it.dataType) {
                 Constants.Video.DataTypes.VIDEO_OUTPUT_DIRECTORY_DATA_TYPE -> {
-                    preferenceScreen.getPreference(0).summary = "Current Directory: ${it.data}"
+                    preferenceScreen.getPreference(0).summary =
+                        requireContext().getString(R.string.settings_preference_output_current_directory_text) + ": ${it.data}"
                 }
-                Constants.Video.DataTypes.VIDEO_ENCODER_DATA_TYPE -> {
-                    (preferenceScreen.getPreference(1) as ListPreference).value = it.data.toString()
-                }
-                Constants.Video.DataTypes.VIDEO_BITRATE_DATA_TYPE -> {
-                    (preferenceScreen.getPreference(2) as ListPreference).value = it.data.toString()
-                }
-                Constants.Video.DataTypes.VIDEO_FPS_DATA_TYPE -> {
-                    (preferenceScreen.getPreference(3) as ListPreference).value = it.data.toString()
-                }
-                Constants.Video.DataTypes.VIDEO_OUTPUT_FORMAT_DATA_TYPE -> {
-                    (preferenceScreen.getPreference(4) as ListPreference).value = it.data.toString()
+                else -> {
+                    (preferenceScreen.getPreference(it.dataType) as ListPreference).value = it.data.toString()
                 }
             }
+        }
+        settingsSaver.getReadData.observe(this) {
+
         }
     }
 
