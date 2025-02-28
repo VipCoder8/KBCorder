@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import bee.corp.kbcorder.databinding.FragmentVideosBinding
@@ -78,6 +79,21 @@ class VideosFragment : Fragment() {
                 )
             }
         }
+        binding.searchVideosView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean { return true }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if(newText == null) {
+                    return true
+                }
+                if(newText.isEmpty()) {
+                    videosAdapter.revertFilter()
+                    return true
+                }
+                videosManagementViewModel.findVideos(newText)
+                return true
+            }
+        })
     }
 
     private fun showTypeBasedDialogs(viewType: Int, data: VideoTabData) {
@@ -114,6 +130,9 @@ class VideosFragment : Fragment() {
         }
         videosManagementViewModel.getDeletedVideo.observe(viewLifecycleOwner) {
             videosAdapter.notifyItemRemoved(it)
+        }
+        videosManagementViewModel.getFoundVideos.observe(viewLifecycleOwner) {
+            videosAdapter.filterVideos(it)
         }
     }
 
